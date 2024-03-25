@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymelaf/layout"
+      layout:decorate="~{layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Club</title>
+</head>
+<body class="d-flex flex-column h-100" xmlns:th="http://www.w3.org/1999/xhtml">
+<main class="flex-shrink-0">
+
+    <!-- Page Content-->
+    <section layout:fragment="body" class="py-5">
+        <div class="container">
+            <form role="form" method="post" th:action="@{/clubs/new}" th:object="${club}">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text"
+                       class="form-control"
+                       id="title"
+                       th:field="*{title}"
+                       name="title"
+                       placeholder="e.g My Awesome Runnig Club">
+            </div>
+            <div class="mb-3">
+                <label for="photoURL" class="form-label">PhotoURL</label>
+                <input type="text" class="form-control" id="photoURL"
+                       placeholder="e.g https://example.com/image.jpg"
+                       th:field="*{photoURL}"
+                       name="photo"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea type="text" class="form-control" id="content"
+                       placeholder="e.g Welcome to my Awesome Running Club. Feel free to join us! :)"
+                       th:field="*{content}"
+                       name="content">
+                </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

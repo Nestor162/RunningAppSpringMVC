@@ -28,5 +28,10 @@ public class ClubServiceImpl implements ClubService {
              .collect(Collectors.toList());
     }
 
+    @Override
+    public Club saveClub(Club club) {
+        return clubRepository.save(club);
     }
+
+}
 
