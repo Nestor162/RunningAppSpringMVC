@@ -26,14 +26,17 @@
                            th:field="*{title}"
                            name="title"
                            placeholder="e.g My Awesome Runnig Club">
+                    <p th:if="${#fields.hasErrors('title')}" class="text-danger" th:errors="*{title}"></p>
                 </div>
                 <div class="mb-3">
                     <label for="photoURL" class="form-label">PhotoURL</label>
                     <input type="text" class="form-control" id="photoURL"
                            placeholder="e.g https://example.com/image.jpg"
                            th:field="*{photoURL}"
-                           name="photo"
+                           name="photoURL"
                     >
+                    <p th:if="${#fields.hasErrors('photoURL')}" class="text-danger" th:errors="*{photoURL}"></p>
+
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Content</label>
@@ -42,6 +45,8 @@
                               th:field="*{content}"
                               name="content">
                 </textarea>
+                    <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
