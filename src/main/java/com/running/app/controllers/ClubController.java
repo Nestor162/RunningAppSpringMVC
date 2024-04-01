@@ -77,5 +77,11 @@ public String clubDetail(@PathVariable("clubId") long clubId,
         model.addAttribute("club", clubDto);
         return "clubs-detail";
         }
+
+        @GetMapping("/clubs/{clubId}/delete")
+    public String deleteClub(@PathVariable("clubId") Long clubId){
+        clubService.deleteById(clubId);
+        return "redirect:/clubs";
+        }
 }
 

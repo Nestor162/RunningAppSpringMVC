@@ -51,6 +51,11 @@ public class ClubServiceImpl implements ClubService {
         clubRepository.save(club);
     }
 
+    @Override
+    public void deleteById(Long clubId) {
+        clubRepository.deleteById(clubId);
+    }
+
     private Club mapToClub(ClubDto club) {
         return new Club(club.getId(),club.getTitle(),
                 club.getPhotoURL(),club.getContent(),
