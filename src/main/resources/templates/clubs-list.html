@@ -24,6 +24,11 @@
                 <p class="lead fw-normal text-muted mb-0">Runner found in your area</p>
             </div>
             <div class="row gx-5">
+                    <div>
+                        <form th:action="@{/clubs/search}" class="form-inline my-2 my-lg-0 mb-3">
+                            <input name="query" class="form-control mr-sm-2 mb-5" type="search" placeholder="Search running clubs..." aria-label="Search">
+                        </form>
+                    </div>
             <div th:each="club : ${clubs}" class="col-lg-6 mb-5">
                 <div class="position-relative mb-3 card-img-container">
                     <img class="img-fluid rounded-3 mb-3 card-img-top" th:src="${club.photoURL}" alt="Club Photo" />
