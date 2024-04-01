@@ -10,24 +10,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
 </head>
+
+
 <body class="d-flex flex-column h-100" xmlns:th="http://www.w3.org/1999/xhtml">
 <main class="flex-shrink-0">
 
     <!-- Page Content-->
     <section layout:fragment="body" class="py-5">
+
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
                 <h1 class="fw-bolder">Runners Near You</h1>
                 <p class="lead fw-normal text-muted mb-0">Runner found in your area</p>
             </div>
-            <div th:each="club : ${clubs}" class="col-lg-6 mb-2">
-                <div class="position-relative mb-3">
-                    <img class="img-fluid rounded-3 mb-3" th:src="${club.photoURL}" alt="Club Photo" />
+            <div class="row gx-5">
+            <div th:each="club : ${clubs}" class="col-lg-6 mb-5">
+                <div class="position-relative mb-3 card-img-container">
+                    <img class="img-fluid rounded-3 mb-3 card-img-top" th:src="${club.photoURL}" alt="Club Photo" />
                     <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!" th:text="${club.title}">Club Name</a>
                 </div>
                 <a class="btn btn-dark" th:href="@{/clubs/{clubId}(clubId=${club.id})}">View</a>
                     <a class="btn btn-secondary" th:href="@{/clubs/{clubId}/edit(clubId=${club.id})}">Edit</a>
-            </div>
+                </div>
+                </div>
 
         </div>
             </div>

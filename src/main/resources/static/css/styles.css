@@ -10846,3 +10846,14 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+ .card-img-container {
+            min-width: 300px;
+            min-height: 150px;
+      }
